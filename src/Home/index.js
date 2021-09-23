@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Category from '../ProductCategory';
-import Product from './Product';
+// import Product from './Product';
 
 const Home = () => {
   const [products, setProduct] = useState([]);
@@ -47,7 +47,8 @@ const Home = () => {
   console.log('categorycategorycategorycategorycategorycategory', category);
   console.log(
     'jeweleryjeweleryjeweleryjeweleryjeweleryjeweleryjeweleryjeweleryjeweleryjeweleryjeweleryjewelery',
-    jewelery
+    jewelery,
+    products
   );
   return (
     <>

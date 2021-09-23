@@ -2,7 +2,7 @@ import axios from 'axios';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Jewellery from './Jewellery';
-import ProductCategory from './ProductCategory';
+// import ProductCategory from './ProductCategory';
 import ProductDetails from './ProductDetails';
 // import Stopwatch from './Stopwatch';
 
