@@ -1,0 +1,45 @@
+@mixin d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@function border($width, $color: $primary-color) {
+  @return $width solid $color;
+}
+
+$directions: all, bottom, top, left, right;
+
+@each $direction in $directions {
+  @for $i from 1 through 100 {
+    @if $direction == all {
+      .p-#{$i} {
+        padding: #{$i}px;
+      }
+    } @else {
+      .p-#{$direction}-#{$i} {
+        padding-#{$direction}: #{$i}px;
+      }
+    }
+  }
+}
+
+@each $direction in $directions {
+  @for $i from 1 through 100 {
+    @if $direction == all {
+      .m-#{$i} {
+        margin: #{$i}px;
+      }
+    } @else {
+      .m-#{$direction}-#{$i} {
+        margin-#{$direction}: #{$i}px;
+      }
+    }
+  }
+}
+
+@for $i from 0 to 5 {
+  .bg-#{$i} {
+    background-color: lighten($primary-color, ($i * 10));
+  }
+}
