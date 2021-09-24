@@ -1,5 +1,9 @@
 .card {
-  width: 500px;
-  background-color: white;
-  border: 5px solid #ccc;
+  // width: 500px;
+  // background-color: white;
+  // border: 5px solid #ccc;
+  display: flex;
+  justify-content: center;
+  text-transform: capitalize;
+  border-radius: 19px;
 }

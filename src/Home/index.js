@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Header from '../DefaultLayout/Header';
 import Category from '../ProductCategory';
 // import Product from './Product';
 
@@ -55,13 +56,15 @@ const Home = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        category.map((category, index) => (
-          <Category key={index} category={category} />
-        ))
-
-        // products.map((product) => (
-        //   <Product key={product.id} product={product} />
-        // ))
+        <>
+          <Header />
+          <div class='main'>
+            <h2 className='category-container'>Categories</h2>
+            {category.map((category, index) => (
+              <Category key={index} category={category} />
+            ))}
+          </div>
+        </>
       )}
     </>
   );
