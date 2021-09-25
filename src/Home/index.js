@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Header from '../DefaultLayout/Header';
+import Sidebar from '../DefaultLayout/Sidebar';
 import Category from '../ProductCategory';
 // import Product from './Product';
 
@@ -34,7 +35,7 @@ const Home = () => {
     setIsLoading(true);
     try {
       const { data } = await axios.get('/products/categories');
-      setCategory(data);
+      setCategory(data.sort((a, b) => a - b).reverse());
     } catch (error) {
     } finally {
       setIsLoading(false);
@@ -51,6 +52,10 @@ const Home = () => {
     jewelery,
     products
   );
+  console.log(
+    'category.sort((a, b) => a - b).reverse()----------------------------',
+    category.sort((a, b) => a - b).reverse()
+  );
   return (
     <>
       {isLoading ? (
@@ -58,8 +63,9 @@ const Home = () => {
       ) : (
         <>
           <Header />
-          <div class='main'>
-            <h2 className='category-container'>Categories</h2>
+          <Sidebar />
+          <div className='main'>
+            <h2 className='category-container text-center'>Categories</h2>
             {category.map((category, index) => (
               <Category key={index} category={category} />
             ))}

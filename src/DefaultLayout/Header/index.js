@@ -1,11 +1,15 @@
 import './header.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div class='navbar'>
-      <a href='#home'>Home</a>
-      <a href='#news'>News</a>
-      <a href='#contact'>Contact</a>
+    <div className='navbar'>
+      <Link to='/'>
+        <i className='fa fa-sign-out' />
+      </Link>
+      <Link to='/cart'>
+        <i className='fa fa-shopping-bag' />
+      </Link>{' '}
     </div>
   );
 };
