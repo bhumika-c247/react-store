@@ -41,7 +41,7 @@ body {
   text-align: center;
 }
 .category-container {
-  // background: #08074f;
+  // background: $primary-color;
   // width: 164px;
   // color: white;
   // text-align: center;
@@ -88,4 +88,16 @@ body {
 }
 a {
   text-decoration: none;
+}
+.loader {
+  font-size: 51px;
+  padding: 294px;
+  color: $primary-color;
+  margin-left: 324px;
+}
+.capital {
+  text-transform: capitalize;
+}
+.checked {
+  color: orange;
 }

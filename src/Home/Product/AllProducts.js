@@ -23,12 +23,12 @@ const AllProducts = () => {
   }, []);
   return (
     <>
+      <Header />
+      <Sidebar />
       {isLoading ? (
-        <p>Loading...</p>
+        <i className='loader fa fa-spinner fa-spin' />
       ) : (
         <>
-          <Header />
-          <Sidebar />
           <div className='main'>
             <h2 className='category-container text-center'>All Products</h2>
             <div className='m-40 p-30'>

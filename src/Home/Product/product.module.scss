@@ -13,10 +13,11 @@
   width: 22%;
   padding: 10px;
   height: 300px;
-  border: 2px dotted #582d58;
+  // border: 2px dotted #582d58;
   border-radius: 20px;
   column-gap: 10px;
   text-align: center;
+  margin-left: 12px;
 }
 
 /* Clear floats after the columns */
@@ -27,7 +28,6 @@
 }
 
 .product_text {
-  // color: #551d9e;
   color: #582d58;
   font-weight: 500;
 }

@@ -1,9 +1,5 @@
 import { Link } from 'react-router-dom';
 import styles from '../Home/Product/product.module.scss';
-// import Elecronic from '/img/categories/electronic-gadgets.jpeg';
-// import Jewelery from '/img/categories/electronic-gadgets.jpeg';
-// import Men from '/img/categories/electronic-gadgets.jpeg';
-// import Women from '/img/categories/electronic-gadgets.jpeg';
 
 const Category = ({ category }) => {
   console.log('category----------------', category);

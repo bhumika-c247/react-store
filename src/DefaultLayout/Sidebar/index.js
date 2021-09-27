@@ -16,7 +16,7 @@ const Sidebar = () => {
 
         <li className='nav__items '>
           <i className='fa fa-users big-icon' />
-          <Link to='/'> Users</Link>
+          <Link to='/users'> Users</Link>
         </li>
       </ul>
     </nav>

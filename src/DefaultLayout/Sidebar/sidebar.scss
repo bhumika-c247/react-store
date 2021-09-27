@@ -1,10 +1,11 @@
+@import '../../scss/variables';
 .nav__cont {
   position: fixed;
   width: 60px;
   top: 47px;
   height: 100vh;
   z-index: 100;
-  background-color: #08074f;
+  background-color: $primary-color;
   overflow: hidden;
   transition: width 0.3s ease;
   cursor: pointer;

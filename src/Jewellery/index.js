@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import Header from '../DefaultLayout/Header';
+import Sidebar from '../DefaultLayout/Sidebar';
 // import Product from './Product';
 
 const Jewellery = () => {
@@ -23,28 +25,71 @@ const Jewellery = () => {
     getProducts();
     // eslint-disable-next-line
   }, []);
-  console.log('data ---------', products);
   return (
     <>
+      <Header />
+      <Sidebar />
       {isLoading ? (
-        <p>Loading...</p>
+        <i className='loader fa fa-spinner fa-spin' />
       ) : (
-        products.map((product, index) => {
-          return (
-            <>
-              <h4>{product?.category}</h4>
-              <h4>{product?.title}</h4>
-              <p>{product?.description}</p>
-              <p>{product?.price}</p>
-              <img
-                src={product?.image}
-                width='400px'
-                height='300px'
-                alt='product'
-              />
-            </>
-          );
-        })
+        <div className='m-100'>
+          <p className='category-container text-center'>{type}</p>
+          {products.map((product, index) => {
+            let rating = Math.floor(product?.rating?.rate);
+            return (
+              <div key={index}>
+                <h4>{product?.title}</h4>
+                <img
+                  src={product?.image}
+                  width='200px'
+                  height='200px'
+                  alt='product'
+                />
+                {console.log('data ---------', product)}
+                <p>{product?.description}</p>
+                <p>${product?.price}</p>
+                <p>
+                  {console.log('rating------', rating)}
+                  {rating === 1 ? (
+                    <span class='fa fa-star checked' />
+                  ) : rating === 2 ? (
+                    <>
+                      {' '}
+                      <span class='fa fa-star checked' />
+                      <span class='fa fa-star checked' />
+                    </>
+                  ) : rating === 3 ? (
+                    <>
+                      {' '}
+                      <span class='fa fa-star checked' />
+                      <span class='fa fa-star checked' />
+                      <span class='fa fa-star checked' />
+                    </>
+                  ) : rating === 4 ? (
+                    <>
+                      {' '}
+                      <span class='fa fa-star checked' />
+                      <span class='fa fa-star checked' />
+                      <span class='fa fa-star checked' />
+                      <span class='fa fa-star checked' />{' '}
+                    </>
+                  ) : (
+                    <>
+                      {' '}
+                      <span class='fa fa-star checked' />
+                      <span class='fa fa-star checked' />
+                      <span class='fa fa-star checked' />
+                      <span class='fa fa-star checked' />
+                      <span class='fa fa-star checked' />{' '}
+                    </>
+                  )}
+                </p>
+
+                <p className='m-40'></p>
+              </div>
+            );
+          })}
+        </div>
       )}
     </>
   );

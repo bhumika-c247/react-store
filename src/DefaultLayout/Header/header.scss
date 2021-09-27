@@ -1,6 +1,7 @@
+@import '../../scss/variables';
 .navbar {
   overflow: hidden;
-  background-color: #08074f;
+  background-color: $primary-color;
   position: fixed;
   top: 0;
   width: 100%;
@@ -18,10 +19,10 @@
 
 .navbar a:hover {
   background: #ddd;
-  color: #08074f;
+  color: $primary-color;
 }
 // hsl(302deg 93% 5% / 62%)
-// #08074f;
+// $primary-color;
 // #aa4ed0
 
 .main {

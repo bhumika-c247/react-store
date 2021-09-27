@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import styles from './product.module.scss';
 
 const Product = ({ product }) => {
-  console.log('product----------------', product.title.length);
   return (
     <div className={`${styles.row} `}>
       <span className={`${styles.column} `}>
