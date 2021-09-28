@@ -6,7 +6,7 @@ const Sidebar = () => {
       <ul className='nav'>
         <li className='nav__items '>
           <i className='fa fa-bars big-icon' />
-          <Link to='/'>Category</Link>
+          <Link to='/category'>Category</Link>
         </li>
 
         <li className='nav__items '>

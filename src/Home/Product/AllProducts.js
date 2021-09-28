@@ -26,7 +26,9 @@ const AllProducts = () => {
       <Header />
       <Sidebar />
       {isLoading ? (
-        <i className='loader fa fa-spinner fa-spin' />
+        <>
+          <i className='loader fa fa-spinner fa-spin' />
+        </>
       ) : (
         <>
           <div className='main'>

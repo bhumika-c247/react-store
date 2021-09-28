@@ -17,6 +17,10 @@ body {
     ),
     radial-gradient(circle at 25.99% 27.79%, #ff94fb, transparent 100%),
     radial-gradient(circle at 50% 50%, #000000, #000000 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  margin: 0;
 }
 
 .app-container {
@@ -100,4 +104,8 @@ a {
 }
 .checked {
   color: orange;
+}
+.product-details {
+  margin-left: 80px;
+  text-align: center;
 }

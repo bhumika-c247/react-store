@@ -51,36 +51,36 @@ const Jewellery = () => {
                 <p>
                   {console.log('rating------', rating)}
                   {rating === 1 ? (
-                    <span class='fa fa-star checked' />
+                    <span className='fa fa-star checked' />
                   ) : rating === 2 ? (
                     <>
                       {' '}
-                      <span class='fa fa-star checked' />
-                      <span class='fa fa-star checked' />
+                      <span className='fa fa-star checked' />
+                      <span className='fa fa-star checked' />
                     </>
                   ) : rating === 3 ? (
                     <>
                       {' '}
-                      <span class='fa fa-star checked' />
-                      <span class='fa fa-star checked' />
-                      <span class='fa fa-star checked' />
+                      <span className='fa fa-star checked' />
+                      <span className='fa fa-star checked' />
+                      <span className='fa fa-star checked' />
                     </>
                   ) : rating === 4 ? (
                     <>
                       {' '}
-                      <span class='fa fa-star checked' />
-                      <span class='fa fa-star checked' />
-                      <span class='fa fa-star checked' />
-                      <span class='fa fa-star checked' />{' '}
+                      <span className='fa fa-star checked' />
+                      <span className='fa fa-star checked' />
+                      <span className='fa fa-star checked' />
+                      <span className='fa fa-star checked' />{' '}
                     </>
                   ) : (
                     <>
                       {' '}
-                      <span class='fa fa-star checked' />
-                      <span class='fa fa-star checked' />
-                      <span class='fa fa-star checked' />
-                      <span class='fa fa-star checked' />
-                      <span class='fa fa-star checked' />{' '}
+                      <span className='fa fa-star checked' />
+                      <span className='fa fa-star checked' />
+                      <span className='fa fa-star checked' />
+                      <span className='fa fa-star checked' />
+                      <span className='fa fa-star checked' />{' '}
                     </>
                   )}
                 </p>
