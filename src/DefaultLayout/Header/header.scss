@@ -21,10 +21,6 @@
   background: #ddd;
   color: $primary-color;
 }
-// hsl(302deg 93% 5% / 62%)
-// $primary-color;
-// #aa4ed0
-
 .username {
   float: right;
   display: block;
@@ -39,4 +35,8 @@
   padding: 14px 16px;
   /* text-decoration: none; */
   font-size: 17px;
+}
+.active {
+  background: #ddd !important;
+  color: #08074f !important;
 }

@@ -1,22 +1,30 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../DefaultLayout/Header';
 import Sidebar from '../DefaultLayout/Sidebar';
-// import styles from './users.module.scss';
+import styles from '../Home/Product/product.module.scss';
+
+let temp = [];
 const Cart = () => {
-  // const [cart, setCart] = useState([]);
-  // const [cart, setCart] = useState([]);
+  let userId = localStorage.getItem('id');
   const [isLoading, setIsLoading] = useState(false);
+  const [allProducts, setAllProducts] = useState([]);
   const getcartDeails = async () => {
     setIsLoading(true);
     try {
-      const { data } = await axios.get('/carts/user/1');
-      console.log('respppppp data--------', data);
-      data.forEach((element) => {
-        console.log('ele', element.products);
-      });
-      data.filter((item) => item.userId === '1');
-      // setCart(data);
+      const { data } = await axios.get(`/carts/${userId}`);
+      if (data.products && data.products.length) {
+        data.products.map(async (item) => {
+          const { data: productData } = await axios.get(
+            `products/${item.productId}`
+          );
+          temp.push({ productData });
+          setAllProducts(temp);
+        });
+        console.log('temp uppppppppp=-------------', temp);
+      }
+      console.log('tempooooooooooooooooooo', temp);
     } catch (error) {
     } finally {
       setIsLoading(false);
@@ -24,19 +32,12 @@ const Cart = () => {
   };
   useEffect(() => {
     getcartDeails();
+    // eslint-disable-next-line
   }, []);
-
-  // const getProductDetails = async (id) => {
-  //   setIsLoading(true);
-  //   try {
-  //     const { data } = await axios.get(`/products/${id}`);
-  //     // setProduct(data);
-  //     console.log('data', data);
-  //   } catch (error) {
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
+  console.log(
+    'allProductsallProductsallProductsallProductsallProductsallProductsallProductsallProductsallProducts',
+    allProducts
+  );
   return (
     <>
       <Header />
@@ -48,27 +49,33 @@ const Cart = () => {
           <div className='main'>
             <h2 className='category-container text-center'>Cart</h2>
             <div className='m-40 p-30'>
-              {/* <table className={styles.customers}>
-                <tr>
-                  <th>Name</th>
-                  <th>Username</th>
-                  <th>Email</th>
-                  <th>Address</th>
-                </tr>
-                {users.map((user, index) => (
-                  <tr key={index}>
-                    <td className='capital'>
-                      {user?.name?.firstname} {user?.name?.lastname}
-                    </td>
-                    <td>{user?.username}</td>
-                    <td>{user?.email}</td>
-                    <td className='capital'>
-                      {user?.address?.number} {user?.address?.street},{' '}
-                      {user?.address?.city}
-                    </td>
-                  </tr>
-                ))}
-              </table> */}
+              {allProducts && allProducts.length > 0
+                ? allProducts.map((item, index) => {
+                    let product = item.productData;
+                    return (
+                      <div className={`${styles.row} `} key={index}>
+                        <span className={`${styles.column} `}>
+                          <Link to={`/products/${product?.id}`}>
+                            <span>
+                              <p className={styles.product_text}>
+                                {product &&
+                                product.title &&
+                                product.title.length > 50
+                                  ? `${product.title.substr(0, 50)}...`
+                                  : product.title}
+                              </p>
+                              <img
+                                className={styles.zoom}
+                                src={product?.image}
+                                alt=''
+                              />
+                            </span>
+                          </Link>
+                        </span>
+                      </div>
+                    );
+                  })
+                : null}
             </div>
           </div>
         </>
